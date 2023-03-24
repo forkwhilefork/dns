@@ -252,12 +252,6 @@ D("netdial.us", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	TXT('_dmarc', 'v=DMARC1; p=reject; pct=100; sp=reject; adkim=s; aspf=s')
 )
 
-D("tagcat.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-	DefaultTTL(3600),
-	NAMESERVER_TTL('2d'),
-	XEF_A_TXT
-)
-
 D("tag-cat.com", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
