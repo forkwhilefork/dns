@@ -89,7 +89,7 @@ D("booktags.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	NAMESERVER_TTL('2d'),
 	MX('@', 10, 'mail.booktags.app.'),
 	TXT('@', 'v=spf1 mx include:mailgun.org -all'),
-	TXT('_dmarc', 'v=DMARC1; p=reject; rua=mailto:ross@tajvar.io; adkim=s; aspf=s; pct=100; sp=none'),
+	DMARC_TXT,
 	TXT('mailcow2._domainkey', 'v=DKIM1;k=rsa;t=s;s=email;p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwazEHN6bKAeoi6xLfP0itaMeRDDva38B/h8W3UYyKhwpgtJs/2iPBOnkFCqitaWYbtwA7sKXMOHmjrBwJSZO6FbXJZ5cqX0CkZHmxOamBUi8oDRZhQaX/P74CRZCAahzVIqGpmbyDzlFREm7jRPbYWQlA6hdtNDpZVRGgZYVqgwIDAQAB'),
 	A('alpha', '23.147.64.132'),
 	AAAA('alpha', '2620:39:6000:102::4'),
@@ -264,7 +264,7 @@ D("netdial.us", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	GOOGLE_WORKSPACE_MX,
 	TXT('@', 'google-site-verification=xHpOniNOKZXD20cgyy9iNNSUs4AdYrN8MA4DveTpH98'),
 	TXT('@', 'v=spf1 include:_spf.google.com -all'),
-	TXT('_dmarc', 'v=DMARC1; p=reject; pct=100; sp=reject; adkim=s; aspf=s')
+	DMARC_TXT
 )
 
 D("tag-cat.com", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
