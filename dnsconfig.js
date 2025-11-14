@@ -44,7 +44,7 @@ var DMARC_TXT = [
 		alignmentSPF: 'strict',
 		alignmentDKIM: 'strict',
 		rua: [
-		  'mailto:ross@tajvar.io',
+		  'mailto:rina@tajvar.io',
 		],
 		failureOptions: '1',
 		reportInterval: '1d',
