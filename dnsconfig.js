@@ -6,6 +6,7 @@
 
 var REG_NONE = NewRegistrar('none');    // No registrar.
 //var REG_OPENSRS = NewRegistrar('opensrs');
+var REG_PORKBUN = NewRegistrar('porkbun');
 //var REG_MONITOR = NewRegistrar('dns-over-https');
 
 var DNS_ROUTE53 = NewDnsProvider('route53');
@@ -141,7 +142,7 @@ D("rekt.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	AAAA('unifi', '2620:39:6000:101::24')
 )
 
-D("ruya.art", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("ruya.art", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	XEF_A_TXT
@@ -154,7 +155,7 @@ D("bgp.community", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	TXT('@', 'https://docs.google.com/spreadsheets/d/1dkZmQzY0slt_uIAr6Aq_Y-2rq9dH5vdzGrpTi2lTq_I/edit#gid=0')
 )
 
-D("noc.contact", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("noc.contact", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	XEF_A_TXT
@@ -252,6 +253,11 @@ D("netdial.us", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DMARC_TXT
 )
 
+D("netdial.io", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+	DefaultTTL(3600),
+	NAMESERVER_TTL('2d')
+)
+
 D("tag-cat.com", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d')
@@ -309,7 +315,7 @@ D("zf.ax", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
     AAAA('@', '2620:39:6000:100::10')
 )
 
-D("as25682.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("as25682.net", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d')
 )
@@ -334,7 +340,7 @@ D("bunchof.tools", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	NAMESERVER_TTL('2d')
 )
 
-D("irr.tools", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("irr.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d')
 )
@@ -344,39 +350,74 @@ D("binge.zone", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	NAMESERVER_TTL('2d')
 )
 
-D("everydayireceive.email", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("everydayireceive.email", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d')
 )
 
-D("bgp.chat", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("bgp.chat", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d'),
   XEF_A_TXT
 )
 
-D("bgp.camera", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("bgp.camera", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d')
 )
 
-D("toomuch.network", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("toomuch.network", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d')
 )
 
-D("webbed.site", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("webbed.site", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d'),
   A('minecraft', '23.147.64.116')
 )
 
-D("dfz.lol", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("dfz.lol", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d')
 )
 
-D("becrimesdo.gay", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("becrimesdo.gay", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
+
+D("arp.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
+
+D("fax.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
+
+D("regex.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
+
+D("rina.business", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
+
+D("rina.diy", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
+
+D("rina.help", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
+
+D("telephony.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d')
 )
