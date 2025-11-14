@@ -5,8 +5,8 @@
 // Providers:
 
 var REG_NONE = NewRegistrar('none');    // No registrar.
-var REG_OPENSRS = NewRegistrar('opensrs');
-var REG_MONITOR = NewRegistrar('dns-over-https');
+//var REG_OPENSRS = NewRegistrar('opensrs');
+//var REG_MONITOR = NewRegistrar('dns-over-https');
 
 var DNS_ROUTE53 = NewDnsProvider('route53');
 
@@ -53,7 +53,7 @@ var DMARC_TXT = [
 
 // Domains:
 
-D("howdoesthepstn.work", REG_OPENSRS, DnsProvider(DNS_ROUTE53, 4),
+D("howdoesthepstn.work", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d'),
   GITHUB_PAGES_A_AAAA
@@ -130,15 +130,14 @@ D("rekt.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	AAAA('chat', '2620:39:6000:101::7'),
 	TXT('chat', 'v=spf1 include:mailgun.org -all'),
 	TXT('mx._domainkey.chat', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC1FxnJq4iTUdsD6yX+xGAe9uaZAdbeJ9Q7wHIB0SKqiJFdr5Z1paIvARv+H5D+5gN5w27xGytF8H/l3NkpYaNLdRnOrNYWNfIbJVmsI+OQw2X4m2hhgHl03Zlr1FU/YNxpopn+ZSEECvsLi/aXJff/OZomBWVPTJE5/OwjhqABFwIDAQAB'),
-	A('firefly-iii', '23.147.64.135'),
-	AAAA('firefly-iii', '2620:39:6000:102::7'),
 	A('ha', '23.147.64.133'),
 	AAAA('ha', '2620:39:6000:102::5'),
 	A('irc', '23.147.64.122'),
 	AAAA('irc', '2620:39:6000:101::22'),
 	A('minecraft', '23.147.64.134'),
 	TXT('mailo._domainkey.social', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC6BXk/609ViOsNsYYkB2vuhFWEnomurL8juFqpFaa1GweRsg6wo/heJ4SmtUflqOgh262jDkKD5kSjgjzOa+eRlem+mexVj6kIFK6PAQ4wtr9LnRMJ7fDjapx51R//MU2IjUQJpWGyIawhhZBZXMNepoAT4KAVe6liHes/JjShXwIDAQAB'),
-	A('unifi', '23.147.64.110'),
+	A('paperless', '23.147.64.135'),
+    A('unifi', '23.147.64.110'),
 	AAAA('unifi', '2620:39:6000:101::24')
 )
 
@@ -146,13 +145,6 @@ D("ruya.art", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	XEF_A_TXT
-)
-
-D("redbrickburlesque.com", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-	DefaultTTL(3600),
-	NAMESERVER_TTL('2d'),
-	GOOGLE_WORKSPACE_MX,
-	TXT('@', 'google-site-verification=6S5ti9RZu_PSrS2nJk2-ukv7z_L0Q2qyG27FpwyydTg')
 )
 
 D("bgp.community", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
@@ -168,14 +160,6 @@ D("noc.contact", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	XEF_A_TXT
 )
 
-D("powerful.gay", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-	DefaultTTL(3600),
-	NAMESERVER_TTL('2d'),
-	GOOGLE_WORKSPACE_MX,
-	TXT('@', 'google-site-verification=FfPocsUuikeSsiQ6IS1J5Awd7hh48zaaISKL07bR99I'),
-  IGNORE_NAME("home", "A")
-)
-
 D("ross.help", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
@@ -186,6 +170,7 @@ D("tajvar.io", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	GOOGLE_WORKSPACE_MX,
+    IGNORE_NAME("home", "A"),
 	TXT('@', 'v=spf1 include:_spf.google.com -all'),
 	TXT('@', 'google-site-verification=pLLkvQJq_d5yrPTK5jc9MZXRSU2VI2nQh0wzrbivVJE'),
 	TXT('tagcat.org._report._dmarc', 'v=DMARC1'),
@@ -269,8 +254,7 @@ D("netdial.us", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 
 D("tag-cat.com", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
-	NAMESERVER_TTL('2d'),
-	XEF_A_TXT
+	NAMESERVER_TTL('2d')
 )
 
 D("tag-cat.org", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
@@ -319,8 +303,10 @@ D("whatisthiscr.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 )
 
 D("zf.ax", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-	DefaultTTL(60),
-	NAMESERVER_TTL('2d')
+	DefaultTTL(3600),
+	NAMESERVER_TTL('2d'),
+    A('@', '23.147.64.75'),
+    AAAA('@', '2620:39:6000:100::10')
 )
 
 D("as25682.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
@@ -365,7 +351,8 @@ D("everydayireceive.email", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 
 D("bgp.chat", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+  NAMESERVER_TTL('2d'),
+  XEF_A_TXT
 )
 
 D("bgp.camera", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
@@ -380,7 +367,8 @@ D("toomuch.network", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 
 D("webbed.site", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+  NAMESERVER_TTL('2d'),
+  A('minecraft', '23.147.64.116')
 )
 
 D("dfz.lol", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
