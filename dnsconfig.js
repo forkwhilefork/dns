@@ -272,25 +272,6 @@ D("tag-cat.org", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	XEF_A_TXT
 )
 
-D("tnctdc.com", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-	DefaultTTL(3600),
-	NAMESERVER_TTL('2d'),
-	GOOGLE_WORKSPACE_MX,
-	DMARC_TXT,
-	A('@', '23.147.64.126'),
-	AAAA('@', '2620:39:6000::101:25'),
-	TXT('@', 'google-site-verification=ouIZvYciC_XKCkPPudxjIx-8x0z1b1ZDjAFhRnNOU9s'),
-	TXT('@', 'v=spf1 -all'),
-	TXT('store', 'v=spf1 include:mailgun.org -all'),
-	TXT('mx._domainkey.store', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCZizwuuDkOnko68H7r4jmVzqe5v6zthaN3516+Km6noYneuu2F78J+x3RDCo5Bq6Hx5EY25Z/s72Sddt8biYjlLM+w/I+ENzEwunQ/WBIrq+SkMVsE0lBj4wd1rLf3IaMKWQ9VYTgYyarhrFvUDMHApEWNYBNyex/hHVp5Wy/MJwIDAQAB'),
-	MX('store', 10, 'mxa.mailgun.org.'),
-	MX('store', 10, 'mxb.mailgun.org.'),
-	CNAME('email.store', 'mailgun.org.')
-)
-
-
-// Empty Domains:
-
 D("pleasecl.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d')
