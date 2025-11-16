@@ -421,3 +421,18 @@ D("telephony.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d')
 )
+
+D("firmware.download", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
+
+D("shesjustlikeme.fr", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
+
+D("as942.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d')
+)
