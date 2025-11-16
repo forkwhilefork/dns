@@ -432,7 +432,9 @@ D("firmware.download", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 
 D("shesjustlikeme.fr", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+  NAMESERVER_TTL('2d'),
+  FASTLY_A,
+  CNAME('_acme-challenge', 's844x3e638yvpuqtno.fastly-validations.com.')
 )
 
 D("as942.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
