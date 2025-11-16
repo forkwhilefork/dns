@@ -33,6 +33,13 @@ var XEF_A_TXT = [
 	TXT('@', 'xenyth-cust-340'),
 ]
 
+var FASTLY_A = [
+	A('@', '151.101.1.242'),
+	A('@', '151.101.129.242'),
+	A('@', '151.101.193.242'),
+	A('@', '151.101.65.242'),
+]
+
 var DMARC_TXT = [
 	DMARC_BUILDER({
 		policy: 'reject',
@@ -431,4 +438,13 @@ D("shesjustlikeme.fr", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 D("as942.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
   DefaultTTL(3600),
   NAMESERVER_TTL('2d')
+)
+
+D("ri.na", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+  DefaultTTL(3600),
+  NAMESERVER_TTL('2d'),
+  FASTLY_A,
+  GOOGLE_WORKSPACE_MX,
+  TXT('@', 'google-site-verification=yDKwamFIzfTddNWK1qyA4D3-tzMk9bkT6fEscXLcg24'),
+  CNAME('_acme-challenge', 't0sihb0se21xgijjdm.fastly-validations.com.')
 )
