@@ -14,11 +14,7 @@ var DNS_ROUTE53 = NewDnsProvider('route53');
 // Constants:
 
 var GOOGLE_WORKSPACE_MX = [
-  MX('@', 1, 'aspmx.l.google.com.'),
-  MX('@', 5, 'alt1.aspmx.l.google.com.'),
-  MX('@', 5, 'alt2.aspmx.l.google.com.'),
-  MX('@', 10, 'alt3.aspmx.l.google.com.'),
-  MX('@', 10, 'alt4.aspmx.l.google.com.'),
+  MX('@', 1, 'smtp.google.com.'),
 ]
 
 var GITHUB_PAGES_A_AAAA = [
