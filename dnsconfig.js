@@ -321,7 +321,9 @@ D("fork.tel", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 
 D("bunchof.tools", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
-	NAMESERVER_TTL('2d')
+	NAMESERVER_TTL('2d'),
+    FASTLY_A,
+    CNAME('_acme-challenge', 'ldbti6jnz6wkg90jnf.fastly-validations.com.')
 )
 
 D("irr.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
