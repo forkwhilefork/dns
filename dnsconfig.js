@@ -374,8 +374,10 @@ D("becrimesdo.gay", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 )
 
 D("arp.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d'),
+    FASTLY_A,
+    CNAME('_acme-challenge', '8gjazkoql5bzy9os0a.fastly-validations.com.')
 )
 
 D("fax.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
