@@ -386,8 +386,10 @@ D("fax.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 )
 
 D("regex.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d'),
+    FASTLY_A,
+    CNAME('_acme-challenge', '2ipa9jep2mz2xaztsl.fastly-validations.com.')
 )
 
 D("rina.business", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
