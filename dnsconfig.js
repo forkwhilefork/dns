@@ -33,11 +33,32 @@ var XEF_A_TXT = [
 	TXT('@', 'xenyth-cust-340'),
 ]
 
-var FASTLY_A = [
+var FASTLY_A_1 = [
+	A('@', '151.101.1.241'),
+	A('@', '151.101.129.241'),
+	A('@', '151.101.193.241'),
+	A('@', '151.101.65.241'),
+]
+
+var FASTLY_AAAA_1 = [
+	AAAA('@', '2a04:4e42::497'),
+	AAAA('@', '2a04:4e42:200::497'),
+	AAAA('@', '2a04:4e42:400::497'),
+	AAAA('@', '2a04:4e42:600::497'),
+]
+
+var FASTLY_A_2 = [
 	A('@', '151.101.1.242'),
 	A('@', '151.101.129.242'),
 	A('@', '151.101.193.242'),
 	A('@', '151.101.65.242'),
+]
+
+var FASTLY_AAAA_2 = [
+	AAAA('@', '2a04:4e42::498'),
+	AAAA('@', '2a04:4e42:200::498'),
+	AAAA('@', '2a04:4e42:400::498'),
+	AAAA('@', '2a04:4e42:600::498'),
 ]
 
 var DMARC_TXT = [
@@ -322,7 +343,8 @@ D("fork.tel", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 D("bunchof.tools", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
-    FASTLY_A,
+    FASTLY_A_2,
+    FASTLY_AAAA_2,
     CNAME('_acme-challenge', 'ldbti6jnz6wkg90jnf.fastly-validations.com.')
 )
 
@@ -376,7 +398,8 @@ D("becrimesdo.gay", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 D("arp.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
     DefaultTTL(3600),
     NAMESERVER_TTL('2d'),
-    FASTLY_A,
+    FASTLY_A_2,
+    FASTLY_AAAA_2,
     CNAME('_acme-challenge', '8gjazkoql5bzy9os0a.fastly-validations.com.')
 )
 
@@ -388,7 +411,8 @@ D("fax.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 D("regex.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
     DefaultTTL(3600),
     NAMESERVER_TTL('2d'),
-    FASTLY_A,
+    FASTLY_A_2,
+    FASTLY_AAAA_2,
     CNAME('_acme-challenge', '2ipa9jep2mz2xaztsl.fastly-validations.com.')
 )
 
@@ -413,15 +437,19 @@ D("telephony.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 )
 
 D("firmware.download", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d'),
+    FASTLY_A_2,
+    FASTLY_AAAA_2,
+    CNAME('_acme-challenge', 'yx6n1a11lbzy30b0qv.fastly-validations.com.')
 )
 
 D("shesjustlikeme.fr", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d'),
-  FASTLY_A,
-  CNAME('_acme-challenge', 's844x3e638yvpuqtno.fastly-validations.com.')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d'),
+    FASTLY_A_2,
+    FASTLY_AAAA_2,
+    CNAME('_acme-challenge', 's844x3e638yvpuqtno.fastly-validations.com.')
 )
 
 D("as942.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
@@ -430,10 +458,11 @@ D("as942.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 )
 
 D("ri.na", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d'),
-  FASTLY_A,
-  GOOGLE_WORKSPACE_MX,
-  TXT('@', 'google-site-verification=yDKwamFIzfTddNWK1qyA4D3-tzMk9bkT6fEscXLcg24'),
-  CNAME('_acme-challenge', 't0sihb0se21xgijjdm.fastly-validations.com.')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d'),
+    FASTLY_A_2,
+    FASTLY_AAAA_2,
+    GOOGLE_WORKSPACE_MX,
+    TXT('@', 'google-site-verification=yDKwamFIzfTddNWK1qyA4D3-tzMk9bkT6fEscXLcg24'),
+    CNAME('_acme-challenge', 't0sihb0se21xgijjdm.fastly-validations.com.')
 )
