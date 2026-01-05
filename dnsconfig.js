@@ -287,23 +287,7 @@ D("tag-cat.com", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	NAMESERVER_TTL('2d')
 )
 
-D("tag-cat.org", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-	DefaultTTL(3600),
-	NAMESERVER_TTL('2d'),
-	XEF_A_TXT
-)
-
-D("pleasecl.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-	DefaultTTL(3600),
-	NAMESERVER_TTL('2d')
-)
-
-D("takean.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-	DefaultTTL(3600),
-	NAMESERVER_TTL('2d')
-)
-
-D("treasurem.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("pleasecl.app", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d')
 )
