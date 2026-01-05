@@ -316,8 +316,9 @@ D("whatisthiscr.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 D("zf.ax", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
-    A('@', '23.147.64.75'),
-    AAAA('@', '2620:39:6000:100::10')
+    FASTLY_A_2,
+    FASTLY_AAAA_2,
+    CNAME('_acme-challenge', 'kmv4o5qfc0xememb2f.fastly-validations.com.')
 )
 
 D("as25682.net", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
