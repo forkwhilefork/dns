@@ -78,16 +78,16 @@ var DMARC_TXT = [
 
 // Domains:
 
-D("howdoesthepstn.work", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d'),
-  GITHUB_PAGES_A_AAAA
+D("howdoesthepstn.work", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d'),
+    GITHUB_PAGES_A_AAAA
 )
 
-D("howdoestheinternet.work", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-	DefaultTTL(3600),
-	NAMESERVER_TTL('2d'),
-  GITHUB_PAGES_A_AAAA
+D("howdoestheinternet.work", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d'),
+    GITHUB_PAGES_A_AAAA
 )
 
 D("stream.af", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
@@ -109,7 +109,7 @@ D("stream.af", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	CNAME('cqtpjrqnal7wlfxch54mihjvnsz4j7gs._domainkey.updates', 'cqtpjrqnal7wlfxch54mihjvnsz4j7gs.dkim.amazonses.com.')
 )
 
-D("booktags.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("booktags.app", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	MX('@', 10, 'mail.booktags.app.'),
@@ -144,7 +144,7 @@ D("booktags.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	AAAA('sendy', '2620:39:6000:101::17')
 )
 
-D("rekt.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("rekt.app", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	MX('@', 10, 'mxa.mailgun.org.'),
@@ -172,7 +172,7 @@ D("ruya.art", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	XEF_A_TXT
 )
 
-D("bgp.community", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("bgp.community", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	XEF_A_TXT,
@@ -202,7 +202,7 @@ D("tajvar.io", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	TXT('google._domainkey', ['v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArXZYhoNDopLRRDUAlju6AYXOvzGp0bajF5zq8tuEmalj7QUAX7+Ywvda5C4nrynBVXpBUHlWgJK2ybiYTo47zV2pur37w7zFqeud4PulEgUxyU/dEWFpmJpSo+VFdlf1tBm6kMHUnWjMkdOWCjlYmV9vvleJcm2/h1DmInZeYj9Gt3DrT4SBNP9+kkBxSK/z0', 'L1ayaqrTHyvyaKX6NSCnTwIqqwwTE9gDUpeyqfuzVs96qpQo9LdR8r4yUueImkphKZu/sZzARFRJi/E0x/RlLB1srmZ77Gr62W+TBem+YKFeFdPTqnPaKMyedaTBSjiNx+m3cwYA4omD95el9OuhQIDAQAB'])
 )
 
-D("voip.lol", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("voip.lol", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	MX('e', 10, 'mxa.mailgun.org.'),
@@ -213,14 +213,14 @@ D("voip.lol", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	AAAA('pbx', '2620:39:6000:101::27')
 )
 
-D("telhami.me", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("telhami.me", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	GOOGLE_WORKSPACE_MX,
 	TXT('@', 'google-site-verification=ctHVEEr_20glMAblfsidxfHtI-28gKRZeBN5jZx7Vvs')
 )
 
-D("forksystems.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("forksystems.net", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	GOOGLE_WORKSPACE_MX,
@@ -262,7 +262,7 @@ D("tajvar.pw", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	TXT('mailo._domainkey', 'k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDbBn74fDUaI+7gEZK6e+ilOZXyTKyeVeZypSnY8pQEcUJB30W8wcWi9ITfla6cXOLmEukzS1PW9m0fA4HJtiNEFCUirpA68C7YwcazxxjED/3qUVgeLgm/IvnbYXbKdrtG6ndMXmQnyM0n6F25T0ZPTBJhxS8JYsb1F6aSJwMqzwIDAQAB')
 )
 
-D("loa.tools", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("loa.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
 	GITHUB_PAGES_A_AAAA
@@ -282,7 +282,7 @@ D("netdial.io", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	NAMESERVER_TTL('2d')
 )
 
-D("tag-cat.com", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("tag-cat.com", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d')
 )
@@ -308,7 +308,7 @@ D("treasurem.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	NAMESERVER_TTL('2d')
 )
 
-D("whatisthiscr.app", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("whatisthiscr.app", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d')
 )
@@ -326,7 +326,7 @@ D("as25682.net", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	NAMESERVER_TTL('2d')
 )
 
-D("as807.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("as807.net", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d')
 )
@@ -336,12 +336,12 @@ D("ndial.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 	NAMESERVER_TTL('2d')
 )
 
-D("fork.tel", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("fork.tel", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d')
 )
 
-D("bunchof.tools", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("bunchof.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 	DefaultTTL(3600),
 	NAMESERVER_TTL('2d'),
     FASTLY_A_2,
@@ -360,40 +360,40 @@ D("binge.zone", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
 )
 
 D("everydayireceive.email", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("bgp.chat", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d'),
-  XEF_A_TXT
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d'),
+    XEF_A_TXT
 )
 
 D("bgp.camera", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("toomuch.network", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("webbed.site", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d'),
-  A('minecraft', '23.147.64.116')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d'),
+    A('minecraft', '23.147.64.116')
 )
 
 D("dfz.lol", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("becrimesdo.gay", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("arp.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
@@ -405,8 +405,8 @@ D("arp.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 )
 
 D("fax.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("regex.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
@@ -418,26 +418,26 @@ D("regex.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
 )
 
 D("rina.business", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("rina.diy", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("rina.help", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("telephony.tools", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
-D("firmware.download", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
+D("firmware.download", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
     DefaultTTL(3600),
     NAMESERVER_TTL('2d'),
     FASTLY_A_2,
@@ -453,9 +453,9 @@ D("shesjustlikeme.fr", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
     CNAME('_acme-challenge', 's844x3e638yvpuqtno.fastly-validations.com.')
 )
 
-D("as942.net", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
-  DefaultTTL(3600),
-  NAMESERVER_TTL('2d')
+D("as942.net", REG_PORKBUN, DnsProvider(DNS_ROUTE53, 4),
+    DefaultTTL(3600),
+    NAMESERVER_TTL('2d')
 )
 
 D("ri.na", REG_NONE, DnsProvider(DNS_ROUTE53, 4),
